@@ -1,29 +1,26 @@
-import React, { Component } from 'react';
-import Header from '../components/Header';
 import Meta from '../components/Meta';
 import styles from 'styled-components';
 
-const MyButton = styled.button`
-	background: red;
-	font-size: ${props => (props.huge ? '100px' : '50px')};
-	.car {
-		font: 100px;
-	}
+const StyledPage = styled.div`
+	background: white;
+	color: black;
+`;
+
+const Inner = styled.div`
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 2rem;
 `;
 
 class Page extends Component {
 	render() {
 		return (
-			<div>
+			<StyledPage>
 				<Meta />
 				<Header />
-				<MyButton>
-					Click Me
-					<span className='car'>car</span>
-				</MyButton>
-				{this.props.children}
-			</div>
-		)
+				<Inner>{this.props.children}</Inner>
+			</StyledPage>
+		);
 	}
 }
 
