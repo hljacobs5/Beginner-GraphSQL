@@ -1,5 +1,18 @@
+import React, { Component } from 'react';
+import Header from '../components/Header';
 import Meta from '../components/Meta';
-import styles from 'styled-components';
+import styled, { ThemeProvider, injectGlobal } from 'styled-components';
+
+const theme = {
+	red: '#FF0000',
+	black: '#393939',
+	grey: '#3A3A3A',
+	lightgrey: '#E1E1E1',
+	offWhite: '#EDEDED',
+	bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
+};
+
+theme.lightGrey = theme.lightgrey
 
 const StyledPage = styled.div`
 	background: white;
