@@ -7,7 +7,8 @@ const StyledPage = styled.div`
 `;
 
 const Inner = styled.div`
-	max-width: 1000px;
+	max-width: ${props => props.theme.maxWidth};
+	background: ${props => props.theme.red};
 	margin: 0 auto;
 	padding: 2rem;
 `;
@@ -15,11 +16,13 @@ const Inner = styled.div`
 class Page extends Component {
 	render() {
 		return (
+		  <ThemeProvider theme={theme}>
 			<StyledPage>
 				<Meta />
 				<Header />
 				<Inner>{this.props.children}</Inner>
 			</StyledPage>
+		  </ThemeProvider>
 		);
 	}
 }
